@@ -1,0 +1,30 @@
+# Sieve default configuration
+# Override: sieve run --config my_config.yaml
+
+pipeline:
+  embedder: "paraphrase-multilingual-MiniLM-L12-v2"
+  similarity_threshold: 0.92
+  index_type: "ivf"             # ivf | hnsw | flat
+  batch_size: 256               # Embedding batch size
+  device: "auto"                # auto | cpu | cuda | cuda:0
+
+chunking:
+  sentences_per_passage: 3
+  stride: 1
+  min_chars: 20
+  max_chars: 2048
+
+index:
+  nlist: 4096                   # IVF clusters
+  M: 64                         # PQ sub-quantizers
+  nprobe: 32                    # Search probes
+  k: 100                        # Neighbors per query
+
+dedup:
+  strategy: "longest_first"     # longest_first | random | source_priority
+  keep_singletons: true
+
+output:
+  format: "jsonl"               # jsonl | parquet | both
+  save_index: true              # Serialize FAISS index for reuse
+  save_embeddings: false        # Save embeddings to disk (large!)
