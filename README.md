@@ -77,3 +77,8 @@ pip install -e .
 Early stage. Works end-to-end on moderate datasets (<10M docs). Scaling to 100M+ is the next big task. GPU index support is experimental.
 
 MIT License.
+
+
+## Recent Updates
+- Performance improvements for batch processing
+- Better error messages for common issues
