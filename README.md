@@ -6,7 +6,7 @@ When you're building training corpora, you end up with the same information repe
 
 ## How it works
 
-1. Split documents iinto overlapping chunks
+1. Split documents iiinto overlapping chunks
 2. Embed each chunk with a multilingual model (default: `paraphrase-multilingual-MiniLM-L12-v2`)
 3. Build a FAISS index (HNSW or IVF-PQ)
 4. Self-join: find all pairs above your cosine similarity threshold
